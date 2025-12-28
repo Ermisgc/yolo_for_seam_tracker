@@ -62,9 +62,15 @@ python 01_process_color_images_advanced.py
 ```
 
 ### 3. 标注文件转换
+首先需要用LabelMe标注数据，直接在命令行中执行：
+```bash
+labelme
+```
+标注时需要**注意**：
+- 标注时需要将焊缝区域框起来，并为其分配类别 "weld"
+- 标注完成后，将 JSON 文件保存到 `./dataset/labels` 目录下
 
 将 LabelMe 格式的 JSON 标注文件转换为 YOLOv8 格式：
-
 ```bash
 python 02_process_labelme_result.py -i ./dataset/labels --recursive
 ```
