@@ -17,7 +17,7 @@ PT_MODEL_PATH = 'weld_seam_detection/yolov8s_v1/weights/best.pt'  # 原模型
 ONNX_MODEL_PATH = 'weld_seam_detection/yolov8s_v1/weights/best.onnx'  # 导出的ONNX模型
 IMAGE_PATH = 'test_img.png'  # 测试图像
 IMG_SIZE = (960, 960)
-IS_FP16 = False  # TODO: 部署时是否需要FP16
+IS_FP16 = False  # TODO: 部署时是否需要FP16，需要与onnx模型导出时一致
 
 
 def preprocess_image(image_path, input_size):

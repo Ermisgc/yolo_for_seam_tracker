@@ -13,6 +13,7 @@
 - **环境检查**：验证 PyTorch、CUDA 和 Ultralytics 库的可用性
 
 ## 文件结构
+```
 yolo_for_seam_tracker/
 ├── 00_hello.py # 环境检查脚本
 ├── 01_process_color_images_advanced.py # 图像数据预处理
@@ -29,7 +30,7 @@ yolo_for_seam_tracker/
 │ ├── val/
 │ └── test/
 └── README.md
-
+```
 ## 安装依赖
 
 在开始使用本项目前，请确保安装了以下依赖：
@@ -112,6 +113,18 @@ python 05_verify_onnx.py
 ```bash
 python 06_detect_video.py
 ```
+
+### 8. 模型导出为TensorRT的`Engine`
+把路径调整为模型的路径，例如：`weld_seam_detection/yolov8s_v1/weights/`
+然后用`TensorRT`自带的`trtexec`工具导出`Engine`：
+```bash
+trtexec --onnx=weld_seam_detection/yolov8s_v1/weights/best.onnx --saveEngine=weld_seam_detection/yolov8s_v1/weights/yolov8s_fp32.engine
+```
+**注意**，如果是float16精度，需要在导出时添加参数`--fp16`：
+```bash
+trtexec --onnx=weld_seam_detection/yolov8s_v1/weights/best.onnx --saveEngine=weld_seam_detection/yolov8s_v1/weights/yolov8s_fp16.engine --fp16
+```
+如果要在C++中使用engine，更推荐在C++中直接获得加载engine，而不是在Python中加载。
 
 ## 训练参数说明
 
