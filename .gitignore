@@ -1,0 +1,17 @@
+*
+
+!.gitignore
+!random_move.mp4
+!00_hello.py
+!01_process_color_images_advanced.py
+!02_process_labelme_result.py
+!03_main.py
+!04_export_to_onnx.py
+!05_verify_onnx.py
+!06_detect_video.py
+!07_append_video_frame_to_dataset.py
+!weld.yaml
+!README.md
+
+!random_move.mp4
+!test_img.png
