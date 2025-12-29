@@ -6,8 +6,8 @@
 from ultralytics import YOLO
 
 
-MODEL_PATH = 'weld_seam_detection/yolov8s_v1/weights/best.pt'  # TODO: 模型名称要修改
-FP16 = False  # TODO: 部署时是否需要FP16
+MODEL_PATH = 'weld_seam_detection/yolov8s_v2/weights/best.pt'  # TODO: 模型名称要修改
+IF_FP16 = False  # TODO: 部署时是否需要FP16
 
 
 model = YOLO(MODEL_PATH) 
@@ -17,7 +17,7 @@ model.export(
     format='onnx',           # 导出格式
     imgsz=960,               # 输入尺寸（与训练一致）
     batch=1,                 # 批处理大小（部署时通常为1）
-    half=FP16,              # 使用FP16精度量化
+    half=IF_FP16,              # 使用FP16精度量化
     simplify=True,           # 简化模型
     opset=17,                # ONNX算子集版本
     dynamic=False,           # 固定输入尺寸（更简单）

@@ -10,6 +10,7 @@
 !05_verify_onnx.py
 !06_detect_video.py
 !07_append_video_frame_to_dataset.py
+!08_search_for_dirty_data.py
 !weld.yaml
 !README.md
 

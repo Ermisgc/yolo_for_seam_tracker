@@ -12,6 +12,9 @@
 - **视频检测**：对视频文件进行焊缝检测
 - **环境检查**：验证 PyTorch、CUDA 和 Ultralytics 库的可用性
 
+## 后续部署工作
+将导出的`TensorRT`的`engine`文件放到部署项目[seam_tracker](https://github.com/Ermisgc/seam_tracker)的根目录下，然后调用相关方法
+
 ## 文件结构
 ```
 yolo_for_seam_tracker/
